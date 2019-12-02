@@ -1,0 +1,18 @@
+sudo: false
+language: node_js
+node_js:
+  - 13 # use nodejs v10 LTS
+cache: npm
+branches:
+  only:
+    - source # build master branch only
+script:
+  - hexo generate # generate static files
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "your-git-name"
+  - git config user.email "your-email-address"
+  - git add .
+  - git commit -m "Update blog content by Travis CI"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
