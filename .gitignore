@@ -1,3 +1,4 @@
 node_modules
 public
-._config.yml
+_config.yml
+.deploy_git
