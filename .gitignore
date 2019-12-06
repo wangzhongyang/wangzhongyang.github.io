@@ -2,3 +2,4 @@ node_modules
 public
 _config.yml
 .deploy_git
+themes/next
