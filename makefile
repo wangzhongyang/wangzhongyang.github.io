@@ -2,6 +2,7 @@
 init:
 	npm install -g
 	git clone https://github.com/theme-next/hexo-theme-next themes/next
+	npm install -g hexo-cli
 
 # 清空之前的生成文件并重新生成
 new_generate:
