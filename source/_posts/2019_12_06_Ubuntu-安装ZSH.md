@@ -9,6 +9,7 @@ categories:
 abbrlink: 2231054001
 date: 2019-12-06 11:53:30
 ---
+<!-- more -->
 
 #### 安装zsh
 * install
