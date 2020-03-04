@@ -15,6 +15,9 @@
 <p>查看bin log 文件地址</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls /etc/mysql/log_bin_data/log_bin</span></pre></td></tr></table></figure>
 <p><img src="../images/mysql_bin_log_file.png" alt="bin log file"></p>
+<h4 id="解码查看binlog文件"><a href="#解码查看binlog文件" class="headerlink" title="解码查看binlog文件"></a>解码查看binlog文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysqlbinlog log_bin.000002 --base64-output&#x3D;decode-rows -v</span></pre></td></tr></table></figure>
+
+
 ]]></content>
       <tags>
         <tag>mysql</tag>
