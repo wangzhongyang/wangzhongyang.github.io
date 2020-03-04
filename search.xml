@@ -1,79 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>MySQL添加bin-log</title>
-    <url>/1529598446.html</url>
-    <content><![CDATA[<h4 id="查看是否开启"><a href="#查看是否开启" class="headerlink" title="查看是否开启"></a>查看是否开启</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">VARIABLES</span> <span class="keyword">like</span> <span class="string">'%log_bin%'</span></span></pre></td></tr></table></figure>
-<p><img src="../images/mysql_bin_log_off.png" alt="未开启bin log"></p>
-<h4 id="在MySQL配置文件开启binlog日志的两种方式"><a href="#在MySQL配置文件开启binlog日志的两种方式" class="headerlink" title="在MySQL配置文件开启binlog日志的两种方式"></a>在MySQL配置文件开启binlog日志的两种方式</h4><ul>
-<li>第一种<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 开启binlog</span></pre></td></tr><tr><td class="code"><pre><span class="line">log_bin&#x3D;ON</span></pre></td></tr><tr><td class="code"><pre><span class="line"># binlog日志的基本文件名</span></pre></td></tr><tr><td class="code"><pre><span class="line">log_bin_basename&#x3D;&#x2F;etc&#x2F;mysql&#x2F;log_bin_data&#x2F;log_bin</span></pre></td></tr><tr><td class="code"><pre><span class="line"># binlog文件的索引文件，管理所有binlog文件</span></pre></td></tr><tr><td class="code"><pre><span class="line">log_bin_index&#x3D;&#x2F;etc&#x2F;mysql&#x2F;log_bin_data&#x2F;log_bin.index</span></pre></td></tr></table></figure></li>
-<li>第二种<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 开启binlog 这一行在5.7版本不加没有效果</span></pre></td></tr><tr><td class="code"><pre><span class="line">log_bin&#x3D;ON</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">log-bin&#x3D;&#x2F;etc&#x2F;mysql&#x2F;log_bin_data&#x2F;log_bin</span></pre></td></tr></table></figure>
-<em>binlog 文件路径为 /etc/mysql/log_bin_data/</em></li>
-</ul>
-<h4 id="查看结果"><a href="#查看结果" class="headerlink" title="查看结果"></a>查看结果</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">VARIABLES</span> <span class="keyword">like</span> <span class="string">'%log_bin%'</span></span></pre></td></tr></table></figure>
-<p><img src="../images/mysql_bin_log_on.png" alt="已开启bin log"></p>
-<p>查看bin log 文件地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls /etc/mysql/log_bin_data/log_bin</span></pre></td></tr></table></figure>
-<p><img src="../images/mysql_bin_log_file.png" alt="bin log file"></p>
-<h4 id="解码查看binlog文件"><a href="#解码查看binlog文件" class="headerlink" title="解码查看binlog文件"></a>解码查看binlog文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysqlbinlog log_bin.000002 --base64-output&#x3D;decode-rows -v</span></pre></td></tr></table></figure>
-
-
-]]></content>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/4a17b156.html</url>
-    <content><![CDATA[<a id="more"></a>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post ahha this test url"</span></span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Ubuntu 安装ZSH</title>
-    <url>/2231054001.html</url>
-    <content><![CDATA[<a id="more"></a>
-
-<h4 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h4><ul>
-<li>install<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt install zsh</span></pre></td></tr></table></figure></li>
-<li>验证安装<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zsh --version</span></pre></td></tr></table></figure></li>
-<li>设置默认shell<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chsh -s &#x2F;bin&#x2F;zsh</span></pre></td></tr></table></figure></li>
-<li>查看默认shell<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo $SHELL</span></pre></td></tr></table></figure>
-输出<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;zsh</span></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="安装和配置oh-my-zsh-框架"><a href="#安装和配置oh-my-zsh-框架" class="headerlink" title="安装和配置oh-my-zsh 框架"></a>安装和配置oh-my-zsh 框架</h4><ul>
-<li>安装所需工具<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt install wget git</span></pre></td></tr></table></figure></li>
-<li>下载并执行安装脚本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;raw&#x2F;master&#x2F;tools&#x2F;install.sh -O - | zsh</span></pre></td></tr></table></figure></li>
-<li>copy配置文件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc</span></pre></td></tr><tr><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span></pre></td></tr></table></figure></li>
-<li>完成的结果<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">➜  ~</span></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<p><a href="https://ohmyz.sh/" target="_blank" rel="noopener">zsh官网</a></p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>MySQL添加bin-log</title>
+      <link href="/1529598446.html"/>
+      <url>/1529598446.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="查看是否开启"><a href="#查看是否开启" class="headerlink" title="查看是否开启"></a>查看是否开启</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">VARIABLES</span> <span class="keyword">like</span> <span class="string">'%log_bin%'</span></span></pre></td></tr></table></figure><p><img src="../images/mysql_bin_log_off.png" alt="未开启bin log"></p><h4 id="在MySQL配置文件开启binlog日志的两种方式"><a href="#在MySQL配置文件开启binlog日志的两种方式" class="headerlink" title="在MySQL配置文件开启binlog日志的两种方式"></a>在MySQL配置文件开启binlog日志的两种方式</h4><ul><li>第一种<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># 开启binlog</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">log_bin&#x3D;ON</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"># binlog日志的基本文件名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">log_bin_basename&#x3D;&#x2F;etc&#x2F;mysql&#x2F;log_bin_data&#x2F;log_bin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"># binlog文件的索引文件，管理所有binlog文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">log_bin_index&#x3D;&#x2F;etc&#x2F;mysql&#x2F;log_bin_data&#x2F;log_bin.index</span></pre></td></tr></table></figure></li><li>第二种<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># 开启binlog 这一行在5.7版本不加没有效果</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">log_bin&#x3D;ON</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">log-bin&#x3D;&#x2F;etc&#x2F;mysql&#x2F;log_bin_data&#x2F;log_bin</span></pre></td></tr></table></figure><em>binlog 文件路径为 /etc/mysql/log_bin_data/</em></li></ul><h4 id="查看结果"><a href="#查看结果" class="headerlink" title="查看结果"></a>查看结果</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">VARIABLES</span> <span class="keyword">like</span> <span class="string">'%log_bin%'</span></span></pre></td></tr></table></figure><p><img src="../images/mysql_bin_log_on.png" alt="已开启bin log"></p><p>查看bin log 文件地址</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ls /etc/mysql/log_bin_data/log_bin</span></pre></td></tr></table></figure><p><img src="../images/mysql_bin_log_file.png" alt="bin log file"></p><h4 id="解码查看binlog文件"><a href="#解码查看binlog文件" class="headerlink" title="解码查看binlog文件"></a>解码查看binlog文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mysqlbinlog log_bin.000002 --base64-output&#x3D;decode-rows -v</span></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/4a17b156.html"/>
+      <url>/4a17b156.html</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post ahha this test url"</span></span></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu 安装ZSH</title>
+      <link href="/2231054001.html"/>
+      <url>/2231054001.html</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><h4 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h4><ul><li>install<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">apt install zsh</span></pre></td></tr></table></figure></li><li>验证安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">zsh --version</span></pre></td></tr></table></figure></li><li>设置默认shell<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">chsh -s &#x2F;bin&#x2F;zsh</span></pre></td></tr></table></figure></li><li>查看默认shell<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">echo $SHELL</span></pre></td></tr></table></figure>输出<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;zsh</span></pre></td></tr></table></figure></li></ul><h4 id="安装和配置oh-my-zsh-框架"><a href="#安装和配置oh-my-zsh-框架" class="headerlink" title="安装和配置oh-my-zsh 框架"></a>安装和配置oh-my-zsh 框架</h4><ul><li>安装所需工具<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">apt install wget git</span></pre></td></tr></table></figure></li><li>下载并执行安装脚本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;raw&#x2F;master&#x2F;tools&#x2F;install.sh -O - | zsh</span></pre></td></tr></table></figure></li><li>copy配置文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span></pre></td></tr></table></figure></li><li>完成的结果<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">➜  ~</span></pre></td></tr></table></figure></li></ul><p><a href="https://ohmyz.sh/" target="_blank" rel="noopener">zsh官网</a></p>]]></content>
+      
+      
       <categories>
-        <category>操作系统</category>
-        <category>Ubuntu</category>
+          
+          <category> 操作系统 </category>
+          
+          <category> Ubuntu </category>
+          
       </categories>
-      <tags>
-        <tag>shell</tag>
-        <tag>ubuntu</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
